@@ -5,67 +5,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GoCourier - Ship</title>
+<link rel="stylesheet" href="style.css">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: #f0f8ff;
-        color: #333;
-    }
-    header, footer {
-        background-color: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 1em 0;
-    }
-    header a, footer a {
-        color: white;
-        text-decoration: none;
-        margin: 0 1em;
-    }
-    header a.active {
-        color: #ecf0f1;
-        font-weight: bold;
-    }
+	nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        nav a.active {
+        	color: white;
+            text-decoration: underline;
+        }
     .main-content {
+        padding: 2em;
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex: 1;
-        padding: 2em;
-        text-align: center;
-    }
-    .login-form-container {
-        max-width: 400px;
-        width: 100%;
-        padding: 2em;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: left;
-        margin: auto; /* Center horizontally */
-    }
-    .login-form-container h3 {
-        font-size: 1.5em;
-        margin-bottom: 1em;
-        color: #2980b9;
     }
     .login-form {
-        display: flex;
-        flex-direction: column;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 2em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+    }
+    .login-form h2 {
+        color: #8e44ad; /* Violet color */
+        margin-bottom: 1em;
     }
     .login-form label {
-        font-size: 1em;
+        display: block;
         margin-bottom: 0.5em;
+        text-align: left;
+        color: #555; /* Darker gray for text */
     }
-    .login-form input[type="text"], .login-form input[type="password"] {
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
         width: 100%;
-        padding: 1em;
+        padding: 0.8em;
         margin-bottom: 1em;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -74,28 +56,29 @@
     .login-form button {
         width: 100%;
         padding: 1em;
-        background-color: #2980b9;
+        background-color: #8e44ad; /* Violet color */
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
     }
     .login-form button:hover {
-        background-color: #1f5e7b;
+        background-color: #6a337e; /* Darker violet for hover state */
     }
-    .signup-link {
+    .login-signup {
         text-align: center;
         margin-top: 1em;
     }
-    .signup-link a {
-        color: blue;
+    .login-signup a {
+        color: #8e44ad; /* Violet color */
         text-decoration: none;
-        font-weight: bold;
+    }
+    .login-signup a:hover {
+        text-decoration: underline;
     }
 </style>
 </head>
 <body>
-
 <header>
     <h1>GoCourier</h1>
     <nav>
@@ -108,21 +91,21 @@
 </header>
 
 <div class="main-content">
-    <div class="login-form-container">
-        <h3>Login</h3>
-        <form action="LoginCont" method="post" class="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Login</button>
-        </form>
-        <div class="signup-link">
-            <h4>New User? <a href="signUp.jsp">Sign Up</a></h4>
-        </div>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form action="LoginServlet" method="post">
+	    <label for="identifier">Username or Email:</label>
+	    <input type="text" id="identifier" name="identifier" required>
+	    
+	    <label for="password">Password:</label>
+	    <input type="password" id="password" name="password" required>
+	    
+	    <button type="submit">Login</button>
+	    <p><a href="signUp.jsp">Sign Up</a> | <a href="staffLogin.jsp">Staff Login</a></p>
+		</form>
+
     </div>
+    
 </div>
 
 <footer>
@@ -132,7 +115,6 @@
         <a href="#">Terms of Service</a>
     </nav>
 </footer>
-
 </body>
 </html>
 

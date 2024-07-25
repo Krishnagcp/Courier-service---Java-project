@@ -5,32 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GoCourier - About Us</title>
+<link rel="stylesheet" href="style.css">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-color: #f0f8ff;
-        color: #333;
-    }
-    header, footer {
-        background-color: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 1em 0;
-    }
-    header a, footer a {
-        color: white;
-        text-decoration: none;
-        margin: 0 1em;
-    }
-    header a.active {
-        color: #ecf0f1;
-        font-weight: bold;
-    }
+	nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        nav a.active {
+        	color: white;
+            text-decoration: underline;
+        }
     .main-content {
         padding: 2em;
         text-align: center;
@@ -41,7 +26,7 @@
     .main-content h2 {
         font-size: 2.5em;
         margin-bottom: 0.5em;
-        color: #2980b9;
+        color: #8e44ad; /* Violet color */
     }
     .section {
         margin-bottom: 2em; /* Add margin between sections */
@@ -57,7 +42,7 @@
     .section h3 {
         font-size: 2em;
         margin-bottom: 0.5em;
-        color: #2980b9;
+        color: #8e44ad; /* Violet color */
     }
     .section p {
         font-size: 1.2em;
@@ -76,7 +61,7 @@
     }
     .section ul li::before {
         content: "•";
-        color: #2980b9;
+        color: #8e44ad; /* Violet color */
         font-weight: bold;
         display: inline-block;
         width: 1em;
@@ -87,16 +72,16 @@
         margin-top: 2em;
         max-width: 800px; 
         width: 100%; 
-        margin: auto; 	
+        margin: auto; 
     }
     .industries h3 {
         font-size: 2em;
-        color: #2980b9;
+        color: #8e44ad; /* Violet color */
         margin-bottom: 1em;
     }
     .industry-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1em;
         padding: 0;
         list-style-type: none;
@@ -173,3 +158,4 @@
 
 </body>
 </html>
+

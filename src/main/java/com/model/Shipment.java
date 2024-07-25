@@ -1,59 +1,125 @@
 package com.model;
 
-public class Shipment {
-    private String trackingNumber;
-    private String sender;
-    private String receiver;
-    private String address;
-    private String packageDetails;
+import java.sql.Date;
 
-    public Shipment(String trackingNumber, String sender, String receiver, String address, String packageDetails) {
-        this.trackingNumber = trackingNumber;
-        this.sender = sender;
-        this.receiver = receiver;
-        this.address = address;
+public class Shipment {
+	private String shipmentId;
+	private String username;
+    private String senderName;
+    private String senderAddress;
+    private String receiverName;
+    private String receiverAddress;
+    private String receiverContactNo;
+    private double weight;
+    private String shipmentType;
+    private String packageDetails;
+    private double payment;
+    private String statusOfProductReceivedByReceiver;
+    private Date dateOfProductReceivedByReceiver;
+    
+    public String getShipmentId() {
+        
+		return shipmentId;
+    }
+
+    public void setShipmentId(String shipmentId) {
+        this.shipmentId = shipmentId;
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getSenderAddress() {
+        return senderAddress;
+    }
+
+    public void setSenderAddress(String senderAddress) {
+        this.senderAddress = senderAddress;
+    }
+
+    public String getReceiverName() {
+        return receiverName;
+    }
+
+    public void setReceiverName(String receiverName) {
+        this.receiverName = receiverName;
+    }
+
+    public String getReceiverAddress() {
+        return receiverAddress;
+    }
+
+    public void setReceiverAddress(String receiverAddress) {
+        this.receiverAddress = receiverAddress;
+    }
+
+    public String getReceiverContactNo() {
+        return receiverContactNo;
+    }
+
+    public void setReceiverContactNo(String receiverContactNo) {
+        this.receiverContactNo = receiverContactNo;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public String getShipmentType() {
+        return shipmentType;
+    }
+
+    public void setShipmentType(String shipmentType) {
+        this.shipmentType = shipmentType;
+    }
+
+    public String getPackageDetails() {
+        return packageDetails;
+    }
+
+    public void setPackageDetails(String packageDetails) {
         this.packageDetails = packageDetails;
     }
 
-	public String getTrackingNumber() {
-		return trackingNumber;
-	}
+    public double getPayment() {
+        return payment;
+    }
 
-	public void setTrackingNumber(String trackingNumber) {
-		this.trackingNumber = trackingNumber;
-	}
+    public void setPayment(double payment) {
+        this.payment = payment;
+    }
+    public String getStatusOfProductReceivedByReceiver() {
+        
+		return statusOfProductReceivedByReceiver;
+    }
 
-	public String getSender() {
-		return sender;
-	}
+    public void setStatusOfProductReceivedByReceiver(String statusOfProductReceivedByReceiver) {
+        this.statusOfProductReceivedByReceiver = statusOfProductReceivedByReceiver;
+    }
 
-	public void setSender(String sender) {
-		this.sender = sender;
-	}
+    public Date getDateOfProductReceivedByReceiver() {
+        
+		return dateOfProductReceivedByReceiver;
+    }
 
-	public String getReceiver() {
-		return receiver;
-	}
-
-	public void setReceiver(String receiver) {
-		this.receiver = receiver;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getPackageDetails() {
-		return packageDetails;
-	}
-
-	public void setPackageDetails(String packageDetails) {
-		this.packageDetails = packageDetails;
-	}
-
-    
+    public void setDateOfProductReceivedByReceiver(Date dateOfProductReceivedByReceiver) {
+        this.dateOfProductReceivedByReceiver = dateOfProductReceivedByReceiver;
+    }
 }
+

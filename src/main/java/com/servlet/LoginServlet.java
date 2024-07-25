@@ -7,26 +7,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.dao.UserDAO;
 
-@WebServlet("/LoginCont")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
+        String identifier = request.getParameter("identifier");
         String password = request.getParameter("password");
 
         UserDAO userDAO = new UserDAO();
-        if (userDAO.validateUser(username, password)) {
+        String username = userDAO.validateUser(identifier, password);
+        System.out.println("Username from validation: " + username);
+
+        if (username != null) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             response.sendRedirect("shipmentForm.jsp");
         } else {
-            response.sendRedirect("ship.jsp");
+            request.setAttribute("loginError", "Invalid credentials. Please try again.");
+            request.getRequestDispatcher("ship.jsp").forward(request, response);
         }
     }
 }
+
 

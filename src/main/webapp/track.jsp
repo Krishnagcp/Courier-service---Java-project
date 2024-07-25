@@ -1,33 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoCourier - Track</title>
+<title>GoCourier - Track Shipments</title>
+<link rel="stylesheet" href="style.css">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    header, footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1em 0;
-    }
-    header a, footer a {
-        color: white;
-        text-decoration: none;
-        margin: 0 1em;
-    }
+	nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        nav a.active {
+        	color: white;
+            text-decoration: underline;
+        }
     .main-content {
         padding: 2em;
         flex: 1;
+    }
+    
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background: #fff;
+    }
+    form .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+    form .form-group label {
+        margin-bottom: 0.5em;
+    }
+    form .form-group input {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    form button {
+        width: 100%;
+        padding: 1em;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
     }
 </style>
 </head>
@@ -39,16 +60,24 @@
         <a href="about.jsp">About Us</a>
         <a href="ship.jsp">Ship</a>
         <a href="contact.jsp">Contact</a>
-        <a href="track.jsp">Track</a>
+        <a href="track.jsp" class="active">Track</a>
     </nav>
 </header>
 
 <div class="main-content">
-    <h2>Track Your Shipment</h2>
-    <form action="TrackShipmentServlet" method="post">
-        <label for="trackingNumber">Tracking Number:</label>
-        <input type="text" id="trackingNumber" name="trackingNumber" required>
-        <button type="submit">Track</button>
+    <center><h2>Track Shipments</h2></center>
+    <form action="LoginToTrack" method="post">
+        <div class="form-group">
+            <label for="usernameOrEmail">Username or Email:</label>
+            <input type="text" id="usernameOrEmail" name="usernameOrEmail" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <button type="submit">Login</button>
     </form>
 </div>
 
@@ -61,3 +90,5 @@
 </footer>
 </body>
 </html>
+
+
